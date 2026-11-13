@@ -1,0 +1,29 @@
+name: "esynchore_dart_frog"
+description: "Dart Frog route and middleware adapters for Esynchore state sessions."
+version: "0.1.0"
+repository: "https://github.com/Iconica-Development/dart_esynchore"
+issue_tracker: "https://github.com/Iconica-Development/dart_esynchore/issues"
+publish_to: "https://forgejo.internal.iconica.nl/api/packages/internal/pub/"
+
+resolution: workspace
+
+environment:
+  sdk: "^3.13.0"
+
+dependencies:
+  dart_iconica_utilities:
+    hosted: "https://forgejo.internal.iconica.nl/api/packages/internal/pub/"
+    version: ^0.0.4
+  dart_frog: ^1.2.6
+  dart_frog_utils:
+    hosted: "https://forgejo.internal.iconica.nl/api/packages/internal/pub/"
+    version: ^1.1.4
+  esynchore_backend:
+    hosted: "https://forgejo.internal.iconica.nl/api/packages/internal/pub/"
+    version: ^0.1.0
+  esynchore_core:
+    hosted: "https://forgejo.internal.iconica.nl/api/packages/internal/pub/"
+    version: ^0.1.0
+
+dev_dependencies:
+  fpdart: ^1.2.0

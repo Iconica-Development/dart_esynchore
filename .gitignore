@@ -1,0 +1,7 @@
+
+# FVM Version Cache
+.fvm/
+
+.dart_tool
+.vscode/settings.json
+**/build/

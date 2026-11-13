@@ -1,0 +1,24 @@
+name: "esynchore_backend"
+description: "Shelf HTTP command and WebSocket state adapters for Esynchore sessions."
+version: "0.1.0"
+repository: "https://github.com/Iconica-Development/dart_esynchore"
+issue_tracker: "https://github.com/Iconica-Development/dart_esynchore/issues"
+publish_to: "https://forgejo.internal.iconica.nl/api/packages/internal/pub/"
+
+resolution: workspace
+
+environment:
+  sdk: "^3.13.0"
+
+dependencies:
+  dart_iconica_utilities:
+    hosted: "https://forgejo.internal.iconica.nl/api/packages/internal/pub/"
+    version: ^0.0.4
+  esynchore_core:
+    hosted: "https://forgejo.internal.iconica.nl/api/packages/internal/pub/"
+    version: ^0.1.0
+  shelf: ^1.4.2
+  shelf_web_socket: ^3.0.0
+
+dev_dependencies:
+  fpdart: ^1.2.0

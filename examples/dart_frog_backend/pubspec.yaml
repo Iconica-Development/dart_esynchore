@@ -1,0 +1,17 @@
+name: counter_dart_frog_backend
+version: 0.0.1
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.13.3
+
+dependencies:
+  counter_domain: ^0.0.1
+  dart_frog: ^1.2.6
+  esynchore_backend:
+    hosted: https://forgejo.internal.iconica.nl/api/packages/internal/pub/
+    version: ^0.1.0
+  esynchore_dart_frog:
+    hosted: https://forgejo.internal.iconica.nl/api/packages/internal/pub/
+    version: ^0.1.0

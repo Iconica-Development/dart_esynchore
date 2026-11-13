@@ -1,0 +1,47 @@
+name: Iconica Standard Component CI Workflow
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  workspace-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: '3.47.9'
+          cache: true
+
+      - name: Authenticate with hosted pub server
+        env:
+          PUB_SERVER_URL: ${{ vars.PUB_SERVER_URL }}
+          PUB_TOKEN: ${{ secrets.PUB_TOKEN }}
+        run: dart pub token add --env-var PUB_TOKEN "$PUB_SERVER_URL"
+
+      - name: Get workspace dependencies
+        run: flutter pub get
+
+      - name: Check formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze workspace packages
+        run: |
+          for package in packages/* examples/*; do
+            if [ -f "$package/pubspec.yaml" ]; then
+              (cd "$package" && flutter analyze)
+            fi
+          done
+
+      - name: Test workspace packages
+        run: |
+          for test_dir in packages/*/test examples/*/test; do
+            if [ -d "$test_dir" ]; then
+              (cd "${test_dir%/test}" && flutter test --no-test-assets --exclude-tags integration)
+            fi
+          done

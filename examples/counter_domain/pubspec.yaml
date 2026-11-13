@@ -1,0 +1,19 @@
+name: counter_domain
+publish_to: none
+version: 0.0.1
+resolution: workspace
+
+environment:
+  sdk: ^3.13.3
+
+dependencies:
+  dart_iconica_utilities:
+    hosted: https://forgejo.internal.iconica.nl/api/packages/internal/pub/
+    version: ^0.0.4
+  esynchore_core:
+    hosted: https://forgejo.internal.iconica.nl/api/packages/internal/pub/
+    version: ^0.1.0
+  fpdart: ^1.2.0
+
+dev_dependencies:
+  test: ^1.25.0

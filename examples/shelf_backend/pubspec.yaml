@@ -1,0 +1,14 @@
+name: counter_shelf_backend
+version: 0.0.1
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.13.3
+
+dependencies:
+  counter_domain: ^0.0.1
+  esynchore_backend:
+    hosted: https://forgejo.internal.iconica.nl/api/packages/internal/pub/
+    version: ^0.1.0
+  shelf: ^1.4.2

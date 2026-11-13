@@ -1,0 +1,39 @@
+name: Iconica Standard Component Release Workflow
+on:
+  release:
+    types: [published]
+
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      PUB_TOKEN: ${{ secrets.PUB_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Authenticate with hosted pub server
+        env:
+          PUB_SERVER_URL: ${{ vars.PUB_SERVER_URL }}
+        run: dart pub token add --env-var PUB_TOKEN "$PUB_SERVER_URL"
+
+      - name: Get workspace dependencies
+        run: flutter pub get
+
+      - name: Publish workspace packages
+        run: |
+          for package in \
+            packages/esynchore_core \
+            packages/esynchore_backend \
+            packages/esynchore_flutter \
+            packages/esynchore_dart_frog; do
+            (cd "$package" && dart pub publish --force)
+          done

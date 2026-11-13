@@ -1,0 +1,28 @@
+name: "esynchore"
+description: "Synchronous event choreography for shared state"
+version: "0.1.0"
+publish_to: "none"
+
+workspace:
+  - examples/counter_domain
+  - examples/counter_cli
+  - examples/counter_flutter
+  - examples/shelf_backend
+  - examples/dart_frog_backend
+  - packages/esynchore_backend
+  - packages/esynchore_core
+  - packages/esynchore_dart_frog
+  - packages/esynchore_flutter
+
+environment:
+  sdk: "^3.13.0"
+
+dependencies:
+  dart_iconica_utilities:
+    hosted: https://forgejo.internal.iconica.nl/api/packages/internal/pub/
+    version: ^0.0.4
+  flutter_iconica_analysis:
+    hosted: https://forgejo.internal.iconica.nl/api/packages/internal/pub/
+    version: ^10.0.0
+  fpdart: ^1.2.0
+  meta: ^1.19.0

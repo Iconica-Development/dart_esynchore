@@ -1,0 +1,22 @@
+name: counter_flutter
+version: 0.0.1
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.13.3
+
+dependencies:
+  counter_domain: ^0.0.1
+  esynchore_core:
+    hosted: https://forgejo.internal.iconica.nl/api/packages/internal/pub/
+    version: ^0.1.0
+  esynchore_flutter:
+    hosted: https://forgejo.internal.iconica.nl/api/packages/internal/pub/
+    version: ^0.1.0
+  flutter:
+    sdk: flutter
+  web_socket_channel: ^3.0.3
+
+flutter:
+  uses-material-design: true

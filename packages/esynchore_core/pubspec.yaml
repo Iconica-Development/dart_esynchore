@@ -1,0 +1,19 @@
+name: "esynchore_core"
+description: "Core state coordination, authenticated sessions, and WebSocket state streaming for Esynchore."
+version: "0.1.0"
+repository: "https://github.com/Iconica-Development/dart_esynchore"
+issue_tracker: "https://github.com/Iconica-Development/dart_esynchore/issues"
+publish_to: "https://forgejo.internal.iconica.nl/api/packages/internal/pub/"
+
+resolution: workspace
+
+environment:
+  sdk: "^3.13.3"
+dependencies:
+  dart_iconica_utilities:
+    hosted: "https://forgejo.internal.iconica.nl/api/packages/internal/pub/"
+    version: ^0.0.4
+  fpdart: ^1.2.0
+  meta: ^1.19.0
+  synchronized: ^3.6.1+1
+  web_socket_channel: ^3.0.3

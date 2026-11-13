@@ -1,0 +1,23 @@
+include: "package:flutter_iconica_analysis/analysis_options.yaml"
+
+linter:
+  rules:
+    avoid_annotating_with_dynamic: false
+    avoid_final_parameters: false
+
+formatter:
+  trailing_commas: "preserve"
+
+analyzer:
+  errors:
+    avoid_field_initializers_in_const_classes: "ignore"
+    file_names: "ignore"
+  exclude:
+    - "**/env_config.dart"
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**

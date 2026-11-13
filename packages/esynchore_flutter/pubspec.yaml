@@ -1,0 +1,21 @@
+name: "esynchore_flutter"
+description: "HTTP client for submitting Esynchore commands independently of state streaming."
+version: "0.1.0"
+repository: "https://github.com/Iconica-Development/dart_esynchore"
+issue_tracker: "https://github.com/Iconica-Development/dart_esynchore/issues"
+publish_to: "https://forgejo.internal.iconica.nl/api/packages/internal/pub/"
+
+resolution: workspace
+
+environment:
+  sdk: "^3.13.0"
+
+dependencies:
+  dart_iconica_utilities:
+    hosted: "https://forgejo.internal.iconica.nl/api/packages/internal/pub/"
+    version: ^0.0.4
+  esynchore_core:
+    hosted: "https://forgejo.internal.iconica.nl/api/packages/internal/pub/"
+    version: ^0.1.0
+  fpdart: ^1.2.0
+  http: ^1.5.0
